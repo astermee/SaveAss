@@ -13,6 +13,7 @@ public class Task11 extends Task {
         int[] arr = {1, 2, 3, 4, 5};
         int counter = 0;
         for (int i = 0; i < arr.length; i++) {
+            //если элемент массива делится на 2 без остатка, то счётчик увеличиться на 1
             if (arr[i] % 2 == 0) {
                 counter++;
             }

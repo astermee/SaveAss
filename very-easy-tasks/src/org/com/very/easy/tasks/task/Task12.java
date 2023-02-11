@@ -15,6 +15,7 @@ public class Task12 extends Task {
         int b = 4;
         int counter = 0;
         for (int i = 0; i < arr.length; i++) {
+            //если элемент массива больше или равен началу отрезка И меньше или равен концу, то счётчик +1
             if (arr[i] >= a && arr[i] <= b) {
                 counter++;
             }
