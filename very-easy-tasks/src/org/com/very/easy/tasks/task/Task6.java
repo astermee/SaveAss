@@ -10,6 +10,7 @@ public class Task6 extends Task {
     @Override
     public void run() {
         super.run();
+        //здесь всё чисто по формулам :)
         double a1 = 1.0;
         double b1 = -2.0;
         double c1 = -8;
@@ -29,6 +30,7 @@ public class Task6 extends Task {
 
         double x = 0;
         double y = 0;
+        //в зависимости от того, что именно обнулилось два варианта:
         if (resA == 0) {
             y = -resC / resB;
             x = -(b1 * y + c1) / a1;
@@ -37,7 +39,6 @@ public class Task6 extends Task {
             x = -resC / resA;
             y = -(a1 * x + c1) / b1;
         }
-
         System.out.println("Ответ: (" + x + ", " + y + ")");
     }
 }

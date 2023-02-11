@@ -16,6 +16,7 @@ public class Task4 extends Task {
         double c = 3.0;
         //формула дискриминанта
         double d = b * b - 4 * a * c;
+        //воспользуемся его свойствами и пропишем условия
         if (d < 0) {
             System.out.println("Дискриминант меньше 0 значит решения нет!");
         }
