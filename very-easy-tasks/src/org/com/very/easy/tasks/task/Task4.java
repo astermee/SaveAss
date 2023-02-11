@@ -14,18 +14,19 @@ public class Task4 extends Task {
         double a = 1.0;
         double b = 6.0;
         double c = 3.0;
+        //формула дискриминанта
         double d = b * b - 4 * a * c;
         if (d < 0) {
-            System.out.println("Дискрименант меньше 0 значит решения нет!");
+            System.out.println("Дискриминант меньше 0 значит решения нет!");
         }
         if (d == 0) {
             double result = -b / (2 * a);
-            System.out.println("Дискрименант равен 0 значит корень один. Ответ: x = " + result);
+            System.out.println("Дискриминант равен 0 значит корень один. Ответ: x = " + result);
         }
         if (d > 0) {
             double result1 = (-b + Math.sqrt(d)) / (2 * a);
             double result2 = (-b - Math.sqrt(d)) / (2 * a);
-            System.out.println("Дискрименант больше 0 значит два корня. Ответ: x1 = " + result1 + "; x2 = " + result2);
+            System.out.println("Дискриминант больше 0 значит два корня. Ответ: x1 = " + result1 + "; x2 = " + result2);
         }
     }
 }

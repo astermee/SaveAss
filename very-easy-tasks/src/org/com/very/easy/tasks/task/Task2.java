@@ -11,6 +11,7 @@ public class Task2 extends Task {
     @Override
     public void run() {
         super.run();
+        //здесь чистая математика по формулам
         double num1 = 1.1;
         double num2 = 2.2;
         double num3 = 3.3;
