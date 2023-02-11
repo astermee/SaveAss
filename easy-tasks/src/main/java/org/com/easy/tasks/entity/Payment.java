@@ -9,18 +9,21 @@ public class Payment {
 
     public Payment() {}
 
+    //сеттер
     public Payment(String fullName, Date date, int value) {
         this.fullName = fullName;
         this.date = date;
         this.value = value;
     }
 
+    //конструктор
     public Payment(Payment payment) {
         this.fullName = payment.getFullName();
         this.date = new Date(payment.getDate());
         this.value = payment.getValue();
     }
 
+   //геттеры и сеттеры
     public String getFullName() {
         return fullName;
     }

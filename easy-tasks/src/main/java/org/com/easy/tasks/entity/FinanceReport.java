@@ -12,12 +12,14 @@ public class FinanceReport {
 
     public FinanceReport() {}
 
+    //сеттер
     public FinanceReport(String fullName, Date date, List<Payment> paymentList) {
         this.fullName = fullName;
         this.date = date;
         this.paymentList = paymentList;
     }
 
+    //конструктор
     public FinanceReport(FinanceReport financeReport) {
         this.fullName = financeReport.fullName;
         this.date = new Date(financeReport.getDate());
@@ -27,6 +29,7 @@ public class FinanceReport {
         }
     }
 
+    //геттеры
     public int getPaymentNumber() {
         return paymentList.size();
     }
@@ -42,11 +45,12 @@ public class FinanceReport {
     public List<Payment> getPaymentList() {
         return paymentList;
     }
-
+    //сеттер
     public void setPaymentList(List<Payment> paymentList) {
         this.paymentList = paymentList;
     }
 
+    //в строку
     @Override
     public String toString() {
         return String.format("[Автор: %s, Дата: %s, Платежи: %s]",
