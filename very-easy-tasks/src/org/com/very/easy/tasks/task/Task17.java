@@ -16,12 +16,18 @@ public class Task17 extends Task {
     @Override
     public void run() {
         super.run();
+        //создаём два вектора в 3д пространстве
         Vector3D vector1 = new Vector3D(0, 0, 0, 1, 1, 1);
         Vector3D vector2 = new Vector3D(2, 2, 2, 3, 3, 3);
+        //сумма
         Vector3D sum = Vector3DProcessor.sum(vector1, vector2);
+        //разность
         Vector3D sub = Vector3DProcessor.sub(vector1, vector2);
+        //скалярное произведение
         double scalMult = Vector3DProcessor.scalMult(vector1, vector2);
+        //векторное произведение
         Vector3D vectMult = Vector3DProcessor.vectMult(vector1, vector2);
+        //Проверка коллинеарности векторов
         boolean isCollinear = Vector3DProcessor.isCollinear(vector1, vector2);
         System.out.println("Сумма векторов " + vector1 + " и " + vector2 + ": " + sum);
         System.out.println("Разность векторов " + vector1 + " и " + vector2 + ": " + sub);
