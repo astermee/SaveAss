@@ -17,11 +17,15 @@ public class Task16 extends Task {
     @Override
     public void run() {
         super.run();
+        //создаём две точки
         Point3D point1 = new Point3D();
         Point3D point2 = new Point3D(1, 1, 1);
+        //создаём два вектора
         Vector3D vector1 = new Vector3D();
+        //состоящий из точек из класса Point3D
         Vector3D vector2 = new Vector3D(point1, point2);
         System.out.println("Длина вектора " + vector2 + ": " + vector2.length());
+        //проверка равенства с заданным вектором
         System.out.println("Равен ли вектор " + vector1 + " вектору " + vector2 + "? Ответ: " + vector1.equals(vector2));
     }
 }

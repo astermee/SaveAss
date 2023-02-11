@@ -8,6 +8,7 @@ public class Vector3D {
     private double z1;
     private double z2;
 
+    //конструктор без параметров (создает нулевой вектор)
     public Vector3D() {
         this.x1 = 0;
         this.x2 = 0;
@@ -17,6 +18,7 @@ public class Vector3D {
         this.z2 = 0;
     }
 
+    //конструктор по координатам
     public Vector3D(double x1, double y1, double z1, double x2, double y2, double z2) {
         this.x1 = x1;
         this.x2 = x2;
@@ -26,6 +28,7 @@ public class Vector3D {
         this.z2 = z2;
     }
 
+    //конструктор по двум точкам (Point3D)
     public Vector3D(Point3D p1, Point3D p2) {
         this.x1 = p1.getX();
         this.x2 = p2.getX();
@@ -35,6 +38,7 @@ public class Vector3D {
         this.z2 = p2.getZ();
     }
 
+    //геттеры и сеттеры НАЧАЛО
     public double getX() {
         return x2 - x1;
     }
@@ -70,16 +74,20 @@ public class Vector3D {
     public double getZ2() {
         return z2;
     }
+    //геттеры и сеттеры КОНЕЦ
 
+    //длина вектора (расчёты по формуле длины вектора)
     public double length() {
         return Math.abs(Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2)));
     }
 
+    //вектор в строку
     @Override
     public String toString() {
         return "Vector3D[(" + x1 + ", " + y1 + ", " + z1 + "), (" + x2 + ", " + y2 + ", " + z2 + ")]";
     }
 
+    //Сравнение векторов
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
