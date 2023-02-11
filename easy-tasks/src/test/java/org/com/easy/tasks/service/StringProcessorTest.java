@@ -17,6 +17,7 @@ class StringProcessorTest {
     }
 
     @Test
+    //repeat метод тест с норм. значением повторов
     void repeat() {
         String inputString = "Test";
         int inputInt = 3;
@@ -24,7 +25,17 @@ class StringProcessorTest {
         String actual = stringProcessor.repeat(inputString, inputInt);
         assertEquals(expected, actual);
     }
+    //repeat метод тест с 0 значение повторов
+    @Test
+    void repeatEmptyIntStroke() {
+        String inputString = "Test";
+        int inputInt = 0;
+        String expected = "";
+        String actual = stringProcessor.repeat(inputString, inputInt);
+        assertEquals(expected, actual);
+    }
 
+    //проверка числа повторов метода count
     @Test
     void count() throws IncorrectInputException {
         String inputString = "Автоматизированный авторобот";
@@ -34,6 +45,7 @@ class StringProcessorTest {
         assertEquals(expected, actual);
     }
 
+    //проверка замены числовых значений словами
     @Test
     void replaceByNumber() {
         String inputString = "Я хочу 1 рожок мороженого, 2 беляша и 3 кулебяки";
@@ -42,6 +54,7 @@ class StringProcessorTest {
         assertEquals(expected, actual);
     }
 
+    //удалить каждый второй символ
     @Test
     void deleteEachSecond() {
         StringBuilder sb = new StringBuilder("Компьютер шумит");
