@@ -16,9 +16,11 @@ public class Task15 extends Task {
     @Override
     public void run() {
         super.run();
+        //создаём два объекта этого класса. Один с 0-ми показ-ми.
         Point3D point1 = new Point3D();
         Point3D point2 = new Point3D(1, 1, 1);
 
+        //сравниваем две точки методом equals, который мы создали в классе Point3D.
         System.out.println("Сравниваем " + point1 + " и " + point2 + ". Равны ли они? Ответ: " + point1.equals(point2));
         System.out.println("Равна ли точка сама себе? Ответ: " + point1.equals(point1));
 

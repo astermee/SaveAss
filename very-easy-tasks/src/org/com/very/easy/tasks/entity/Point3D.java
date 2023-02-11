@@ -6,18 +6,21 @@ public class Point3D {
     private double y;
     private double z;
 
+    //конструктор без параметров (создает точку – начало координат)
     public Point3D() {
         this.x = 0;
         this.y = 0;
         this.z = 0;
     }
 
+    //конструктор по координатам
     public Point3D(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
+    //геттеры и сеттеры НАЧАЛО
     public double getX() {
         return x;
     }
@@ -41,12 +44,15 @@ public class Point3D {
     public void setZ(double z) {
         this.z = z;
     }
+    //геттеры и сеттеры КОНЕЦ
 
+    //вывод точки на консоль
     @Override
     public String toString() {
         return "Point(" + x + ", " + y + ", " + z + ")";
     }
 
+    //сравнение двух точек
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
