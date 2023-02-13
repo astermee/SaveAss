@@ -18,33 +18,36 @@ class FinanceReportProcessorTest {
 
     @BeforeEach
     void setUp() {
-        financeReport = new FinanceReport();
-    }
+        Payment payment1 = new Payment("Ivanov Ivan Ivanovich", new Date(1, 1, 2001), 999);
+        Payment payment2 = new Payment("Antonov Anton Antonovich", new Date(19, 7, 1997), 1_000_000);
+        List<Payment> paymentList = List.of(payment1, payment2);
+        financeReport = new FinanceReport("Polinova Polina Polinovna", new Date(5, 7, 1998), paymentList);
 
-    //Возникают ошибки при передаче даты хз
+    }
 
     @Test
     void getAllPaymentByFirstCharInName() {
-        FinanceReport actual = FinanceReportProcessor.getAllPaymentByFirstCharInName(financeReport, 'a');
+        char filterChar = 'A';
+        List<Payment> expectedList = new ArrayList<>();
+        for (Payment payment : financeReport.getPaymentList()) {
+            if (payment.getFullName().split(" ")[1].charAt(0) == filterChar) {
+                expectedList.add(payment);
+            }
+        }
+        List<Payment> actualList = FinanceReportProcessor.getAllPaymentByFirstCharInName(financeReport, filterChar).getPaymentList();
+        assertEquals(actualList.size(), expectedList.size());
     }
 
     @Test
     void getAllByValue() {
-        Payment payment1 = new Payment();
-        payment1.setFullName("Aleksei");
-        payment1.setDate(new Date(1,2,2022));
-        payment1.setValue(900);
-        Payment payment2 = new Payment();
-        payment2.setFullName("Marina");
-        payment2.setDate(new Date(2,1,2021));
-        payment2.setValue(1100);
-        List payment = new ArrayList();
-        payment.add(payment1);
-        payment.add(payment2);
-        FinanceReport actual = new FinanceReport();
-        actual.setPaymentList(payment);
-        actual = FinanceReportProcessor.getAllByValue(financeReport, 1000);
-        String expected = "900, 500";
-        Assertions.assertEquals(expected, actual);
+        int filterValue = 1000;
+        List<Payment> expectedList = new ArrayList<>();
+        for (Payment payment : financeReport.getPaymentList()) {
+            if (payment.getValue() < filterValue) {
+                expectedList.add(payment);
+            }
+        }
+        List<Payment> actualList = FinanceReportProcessor.getAllByValue(financeReport, filterValue).getPaymentList();
+        assertEquals(actualList.size(), expectedList.size());
     }
 }
